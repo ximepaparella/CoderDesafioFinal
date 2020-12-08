@@ -1,0 +1,62 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+
+//TAMÑOS DE FUENTES
+// .--twoxs {
+//     font-size: px(16);
+//     line-height: px(24);
+// }
+
+[class~="--sixxs"] {
+    @include textsize(11,16);
+}
+
+[class~="--fivexxs"] {
+    @include textsize(12,16);
+}
+
+[class~="--fourxs"] {
+    @include textsize(14,16);
+}
+
+[class~="--threexs"] {
+    @include textsize(15,17);
+}
+
+[class~="--twoxs"] {
+    @include textsize(16,24);
+}
+
+[class~="--xs"] {
+    @include textsize(18,26);
+}
+
+[class~="--s"] {
+    @include textsize(19,30);
+}
+
+[class~="--m"] {
+    @include textsize(16,28);
+}
+
+[class~="--l"] {
+    @include textsize(24,32);
+}
+
+[class~="--xl"] {
+    @include textsize(32,40);
+}
+
+[class~="--twoxl"] {
+    @include textsize(40,52);
+}
+
+[class~="--threexl"] {
+    @include textsize(48,56);
+}
+
+
+strong {
+    font-weight: 700;
+}

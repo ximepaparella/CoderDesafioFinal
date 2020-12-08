@@ -1,0 +1,117 @@
+
+//=======================================
+// MIXIN FONTS
+//=======================================
+
+@mixin font-face($name, $file, $weight) {
+    @font-face {
+        font-family: '#{$name}';
+        src: url('./../../fonts/#{$file}.eot');
+        src: url('./../../fonts/#{$file}.eot?#iefix') format('embedded-opentype'),
+            url('./../../fonts/#{$file}.woff') format('woff'),
+            url('./../../fonts/#{$file}.ttf') format('truetype'),
+            url('./../../fonts/#{$file}.svg?#webfont') format('svg');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: block;
+    }
+}
+
+//=======================================
+// MIXIN COLUMNAS
+//=======================================
+
+@mixin columns($name, $start, $end) {
+    @for $i from $start through $end {
+        .col-#{$name}#{$i} {
+            -ms-flex: 0 0 $col-width * $i * 1%;
+            flex: 0 0 $col-width * $i * 1%;
+            max-width: $col-width * $i * 1%;
+        }
+    }
+}
+
+//=======================================
+// MIXIN ORDERS
+//=======================================
+
+@mixin orders($name, $start, $end) {
+    @for $i from $start through $end {
+        .order-#{$name}#{$i} {
+            -ms-flex-order: $i;
+            order: $i;
+        }
+    }
+}
+
+//=======================================
+// MIXIN OFFSETS
+//=======================================
+
+@mixin offsets($name, $start, $end) {
+    @for $i from $start through $end {
+        .offset-#{$name}#{$i} {
+            margin-left: $col-width * $i * 1%;
+        }
+    }
+}
+
+//=======================================
+// MIXIN DISPLAY
+//=======================================
+@mixin flex($display, $direction: null, $ejeX: null, $ejeY: null) {
+    //Sólo agregamos el "@include flex($display, $direction, $ejeX, $ejeY);"
+    @if $display == flex {
+        $display: flex;
+    } @else if $display == inline {
+        $display: inline-flex;
+    }
+    @if $ejeX == start {
+        $ejeX: flex-start;
+    } @else if $ejeX == end {
+        $ejeX: flex-end;
+    } @else if $ejeX == center {
+        $ejeX: center;
+    } @else if $ejeX == between {
+        $ejeX: space-between;
+    } @else if $ejeX == around {
+        $ejeX: space-around;
+    }
+    @if $ejeY == start {
+        $ejeY: flex-start;
+    } @else if $ejeY == end {
+        $ejeY: flex-end;
+    } @else if $ejeY == center {
+        $ejeY: center;
+    } @else if $ejeY == stretch {
+        $ejeY: stretch;
+    } @else if $ejeY == baseline {
+        $ejeY: baseline;
+    }
+
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $ejeX;
+    align-items: $ejeY;
+}
+
+//=======================================
+// MIXIN TRANSFORM
+//=======================================
+@mixin transform($eje, $valor) {
+    //Sólo agregamos el "@include transform($eje, $valor);"
+    $num: '(#{$valor})';
+    -webkit-transform: translate#{$eje}#{$num};
+    -moz-transform: translate#{$eje}#{$num};
+    -ms-transform: translate#{$eje}#{$num};
+    transform: translate#{$eje}#{$num};
+}
+
+//=======================================
+// MIXIN TAMAÑOS DE FUENTES
+//=======================================
+
+@mixin textsize ($size, $line) {
+    font-size: px($size);
+    line-height: px($line);
+}

@@ -1,0 +1,77 @@
+//=======================================
+// Pixel
+//=======================================
+$em: 0.0625em; //1px
+$rem: 0.0625rem; //1px
+
+@function px($base) {
+    $result: $rem * $base;
+    @return $result;
+}
+
+//=======================================
+// Colores
+//=======================================
+$white: #FFFFFF;
+$black: #000000;
+$primary-100: #4198f7;
+$primary-200: #0d53fc;
+$primary-300: #3e3ef4;
+$secondary: #49c496;
+$dark-900: #263446;
+$dark-700: #88949e;
+$dark-400: #c6cdd8;
+$dark-100: #dee5f1;
+
+
+//=======================================
+// Columnas
+//=======================================
+$cant-col: 12; //Cantidad de columnas
+$col-width: 100 / $cant-col; //Ancho de columnas
+$scroll-width: px(17);
+
+//=======================================
+// Fonts
+//=======================================
+$font-poppins: 'Poppins', sans-serif;
+
+//=======================================
+// Media Queries
+//=======================================
+$media-xs: 'min-width : 20em'; // 320px
+$media-s: 'min-width : 22em'; // 360px
+$media-m: 'min-width: 48em'; // 768px
+$media-l: 'min-width: 64em'; // 1024px
+$media-lm: 'min-width: 68.75em'; // 1100px
+$media-lg: 'min-width: 80em'; // 1280px
+$media-xl: 'min-width: 83.75em'; // 1340px
+
+
+//=======================================
+// Aspect ratio
+//=======================================
+$picture: calc((2 / 3) * 100%);
+$square: calc((3 / 4) * 100%);
+$video: calc((9 / 16) * 100%);
+$cinema: calc((9 / 21) * 100%);
+$vertical-square: calc((13 / 12.19) * 100%);
+$vertical-video: calc((13 / 8.19) * 100%);
+
+//=======================================
+// Espaciados
+//=======================================
+$spacing: $rem * 8;
+$spacing-2xs: $spacing / 2; //4px
+$spacing-xs: $spacing * 1; //8px
+$spacing-sm: $spacing * 2; //16px
+$spacing-md: $spacing * 3; //24px
+$spacing-lg: $spacing * 4; //32px
+$spacing-xl: $spacing * 5; //40px
+$spacing-2xl: $spacing * 8; //64px
+$spacing-3xl: $spacing * 10; //80px
+
+//=======================================
+// Box Shadows
+//=======================================
+$box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
