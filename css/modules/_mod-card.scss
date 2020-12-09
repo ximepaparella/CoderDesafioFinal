@@ -1,0 +1,13 @@
+.mod-card {
+    background-color:$white;
+    border-radius:px(8);
+    padding:px(8);
+    box-shadow: $box-shadow-xs;
+
+    header {
+        display: flex;
+        flex-direction: row;
+        padding:px(8) 0;
+        align-items: center;
+    }
+}

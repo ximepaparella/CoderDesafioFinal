@@ -1,0 +1,18 @@
+.com-badge {
+    font-size:px(8);
+    padding:px(4) px(8);
+    border-radius:px(32);
+    display:inline;
+    margin-left:px(8);
+    
+    &.--primary {
+        background-color:$primary-100;
+        color:$white;
+    }
+
+    &.--secondary {
+        background-color:$secondary;
+        color:$white;
+    }
+
+}
