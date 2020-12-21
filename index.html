@@ -9,8 +9,7 @@
     <script src="https://kit.fontawesome.com/14983c161e.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <!-- <script src="js/main.js"></script> -->
-
+    
     <title>Desafío Final</title>
 </head>
 
@@ -52,12 +51,8 @@
                     <div class="mod-settings">
                         <div class="mod-search">
                             <fieldset>
-                                <input class="com-input" type="text" placeholder="Buscar..." />
-                                <input class="com-button" type="submit" />
+                                <button class="com-button" type="button" onclick="mostrarReserva()" >Ver mis Reservas</button>
                             </fieldset>
-                        </div>
-                        <div class="mod-notifications">
-                            <i class="com-icon far fa-bell"></i>
                         </div>
                     </div>
                 </div>
@@ -65,94 +60,17 @@
 
             <main class="mod-body">
                 <section class="mod-card-list">
-                    <div class="row-gap-3">
-                        <div class="mod-card">
-                            <header>
-                                <h2 class="com-title --xs">Odontología General </h2>
-                                <label class="com-badge --secondary">Especialista</label>
-                            </header>
-                            <main>
-                                <h4 class="com-title --twoxs">Precio $1000</h4>
-                                <p class="com-description --fourxs"> Descripcion del tratamiento y de que trata.</p>
-                            </main>
-                            <footer>
-                                <button class="com-button">Solicitar Turno</button>
-                            </footer>
-                        </div>
-                        <div class="mod-card">
-                            <header>
-                                <h2 class="com-title --xs">Odontología General </h2>
-                                <label class="com-badge --secondary">Especialista</label>
-                            </header>
-                            <main>
-                                <h4 class="com-title --twoxs">Precio $1000</h4>
-                                <p class="com-description --fourxs"> Descripcion del tratamiento y de que trata.</p>
-                            </main>
-                            <footer>
-                                <button class="com-button">Solicitar Turno</button>
-                            </footer>
-                        </div>
-                        <div class="mod-card">
-                            <header>
-                                <h2 class="com-title --xs">Odontología General </h2>
-                                <label class="com-badge --secondary">Especialista</label>
-                            </header>
-                            <main>
-                                <h4 class="com-title --twoxs">Precio $1000</h4>
-                                <p class="com-description --fourxs"> Descripcion del tratamiento y de que trata.</p>
-                            </main>
-                            <footer>
-                                <button class="com-button">Solicitar Turno</button>
-                            </footer>
-                        </div>
-                        <div class="mod-card">
-                            <header>
-                                <h2 class="com-title --xs">Odontología General </h2>
-                                <label class="com-badge --secondary">Especialista</label>
-                            </header>
-                            <main>
-                                <h4 class="com-title --twoxs">Precio $1000</h4>
-                                <p class="com-description --fourxs"> Descripcion del tratamiento y de que trata.</p>
-                            </main>
-                            <footer>
-                                <button class="com-button">Solicitar Turno</button>
-                            </footer>
-                        </div>
-                        <div class="mod-card">
-                            <header>
-                                <h2 class="com-title --xs">Odontología General </h2>
-                                <label class="com-badge --secondary">Especialista</label>
-                            </header>
-                            <main>
-                                <h4 class="com-title --twoxs">Precio $1000</h4>
-                                <p class="com-description --fourxs"> Descripcion del tratamiento y de que trata.</p>
-                            </main>
-                            <footer>
-                                <button class="com-button">Solicitar Turno</button>
-                            </footer>
-                        </div>
-                        <div class="mod-card">
-                            <header>
-                                <h2 class="com-title --xs">Odontología General </h2>
-                                <label class="com-badge --secondary">Especialista</label>
-                            </header>
-                            <main>
-                                <h4 class="com-title --twoxs">Precio $1000</h4>
-                                <p class="com-description --fourxs"> Descripcion del tratamiento y de que trata.</p>
-                            </main>
-                            <footer>
-                                <button class="com-button">Solicitar Turno</button>
-                            </footer>
-                        </div>
+                    <div class="row-gap-2" id="mod-card-list">
+
                     </div>
                 </section>
 
                 <!-- Modal -->
-                <div class="mod-modal">
+                <div class="mod-modal  --hidden" id="mod-modal">
                     <div class="com-modal">
                         <header>
                             <h4>Solicitar turno de: Limpieza de Cutis Profunda</h4>
-                            <button class="com-button --transparent"><i class="fas fa-times"></i></button>
+                            <button class="com-button --transparent" onclick="cerrarModal()"><i class="fas fa-times"></i></button>
                         </header>
                         <main>
                             <form class="mod-form">
@@ -160,16 +78,13 @@
                                     <fieldset>
                                         <label>Seleccione Profesional:</label>
                                         <select name="profesional" id="profesional">
-                                            <option>Profesional 1</option>
-                                            <option>Profesional 2</option>
-                                            <option>Profesional 3</option>
                                         </select>
                                     </fieldset>
                                     <fieldset>
                                         <label>Seleccione Día:</label>
                                         <input type="date" id="fecha" name="fecha"
                                             value="2020-12-22"
-                                            min="2018-01-01" max="2018-12-31">
+                                            min="2020-12-21" max="2022-12-21">
                                     </fieldset>
                                     <fieldset>
                                         <label>Seleccione un horario:</label>
@@ -182,24 +97,28 @@
                                 <div class="row">
                                     <fieldset>
                                         <label>Nombre:</label>
-                                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                                        <input type="text" id="nombre" name="nombre" value="" placeholder="Ingrese su nombre" required>
                                     </fieldset>
                                     <fieldset>
                                         <label>Apellido:</label>
-                                        <input type="text" id="apellido" name="apellido"  placeholder="Ingrese su apellido" required>
+                                        <input type="text" id="apellido" name="apellido" value="" placeholder="Ingrese su apellido" required>
+                                    </fieldset>
+                                    <fieldset>
+                                        <label>DNI:</label>
+                                        <input type="number" id="dni" name="dni" value="" placeholder="Ingrese su dni sin puntos ni espacios" required>
                                     </fieldset>
                                     <fieldset>
                                         <label>Celular:</label>
-                                        <input type="text" id="celular" name="celular" placeholder="Ingrese su celular" required>
+                                        <input type="text" id="celular" name="celular" value="" placeholder="Ingrese su celular" required>
                                     </fieldset>
                                     <fieldset>
                                         <label>E-mail:</label>
-                                        <input type="email" id="email" name="email" placeholder="Ingrese su e-mail" required>
+                                        <input type="email" id="email" name="email" value="" placeholder="Ingrese su e-mail" required>
                                     </fieldset>
                                 </div>
                                 <div class="row">
                                     <div class="form__actions">
-                                        <button class="com-button --primary" type="submit" name="solicitar-turno" id="solicitar-turno">Solicitar Turno</button>
+                                        <button class="com-button --primary" name="solicitar-turno" id="solicitar-turno">Solicitar Turno</button>
                                     </div>
                                 </div>
                             </form>
@@ -210,7 +129,12 @@
             <footer clasS="mod-footer"></footer>
         </section>
     </div>
+
+
+    <!-- Scripts -->
+    <script src="js/tratamientos.js"></script>
+    <script src="js/profesionales.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
-<

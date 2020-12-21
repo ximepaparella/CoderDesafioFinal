@@ -1,112 +1,125 @@
-//Doy la bienvenida
-alert("Bienvenido a Zendenta, a continuación le solicitaremos algunos datos para su reserva. Recuerde siempre ingresar el NUMERO de la opción deseada. Recuerde que los valores se facturarán + IVA");
+//Defino Objeto Tratamiento
+class Tratamiento{
+    constructor(tratamientos){
+        this.id     = parseInt(tratamientos.id);
+        this.nombre = tratamientos.nombre;
+        this.descripcion = tratamientos.descripcion;
+        this.valor = parseFloat(tratamientos.valor);
+        this.valorOferta = parseFloat(tratamientos.valorOferta)
+    }
+    
+}
+//  OBTENER EL CONTENEDOR DONDE VAMOS A AGREGAR LOS NUEVOS ELEMENTOS 
+let contenedorTratamientos = document.getElementById("mod-card-list");
 
-//Solicito los datos y genero las variables generales
-var nombreCliente = prompt("Indiquenos su nombre completo");
-var dniCliente = prompt("Indiquenos su DNI");
-var whatsappCliente = prompt("Indiquenos su número de celular");
-var emailCliente = prompt("Indiquenos su número e-mail");
-var tratamiento = prompt("¿Que tratamiento le gustaría reservar? 1- ODONTOLOGÍA GENERAL || 2- LIMPIEZA DENTAL || 3- TRATAMIENTO DE CONDUCTO" );
-var horarioTratamiento = prompt("Seleccione un horario: 1- POR LA MAÑANA || 2- POR LA TARDE");
-var iva = 0.21;
+//Recorro los tratamientos para dibujarlos
+for(let item of TRATAMIENTOS){
+    crearElemento(item);
+}
 
-var nuevoProfesional = prompt("Si lo desea, puede ingresar un nuevo Profesional que lo atienda");
+function crearElemento(item) {
+    let nuevoItem = document.createElement("div");
+    nuevoItem.innerHTML  = "<div class='mod-card'> <header> <h2 class='com-title --xs'>" + item.nombre + "</h2> <label class='com-badge --secondary'>Especialista</label> </header><main><h4 class='com-title --twoxs'>Precio $" +  item.valor  +  "</h4><p class='com-description --fourxs'>" + item.descripcion + "</p></main><footer><button class='com-button' id='solicitar'>Solicitar Turno</button></footer>" ;
+    contenedorTratamientos.appendChild(nuevoItem);
+}
 
-//Defino el array de profesionales
-var listaProfesionales = ["Juana Pereyra", "Federico Paez", "Marcelo Gotta", "Ileana Ortenci"];
+//Creo función para llamar a abrir modal cuando hagan click en el botón.
+document.getElementById("solicitar").addEventListener("click", mostrarModal);
 
-//Defino el objeto Cliente
-class Cliente{
-    constructor(nombreCliente, whatsappCliente, dniCliente, emailCliente){
-        this.nombre = nombreCliente.toLowerCase();
-        this.celular = parseInt(whatsappCliente);
-        this.dni = parseInt(dniCliente);
-        this.email = emailCliente.toLowerCase();
+// Declaro el Objeto Cliente
+class Cliente {
+    constructor(cliente){
+        this.id     = parseInt(cliente.id);
+        this.nombre = cliente.nombre;
+        this.apellido = cliente.apellido;
+        this.dni = cliente.dni;
+        this.celular = cliente.celular;
+        this.email = cliente.email;
     }
 }
-// Instancio el Cliente a través de los datos ingresados y genero 2 dummys adicionales.
-let cliente = new Cliente (nombreCliente, whatsappCliente, dniCliente, emailCliente);
 
-//Genero una Lista de clientes y hago un push del cliente con los datos obtenidos por los prompt.
-let listaClientes = [];
-listaClientes.push(cliente);
-listaClientes.push(new Cliente ("Juana Verón", "11555432", "334432423", "juana@veron.com"));
-listaClientes.push(new Cliente ("Pedro Gomez", "11555432", "334432423", "pgomez@gmail.com"));
-
-//Muestro la lista de clientes.
-console.log("Lista de Clientes Actuales");
-for (let cliente of listaClientes) {
-    console.log(cliente);
-}
-
-//Defino el objeto Tratamiento y sus atributos (paso el array de profesionales)
-function Tratamiento (nombre, descripcion, precio, listaProfesionales) {
-    this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.precio = parseInt(precio);
-    this.profesionales = listaProfesionales;
-};
-
-//Obtengo el horario de la reserva según el tratamiento elegido
-function horarioReserva(horarioTratamiento) {
-    if (horarioTratamiento === "1"){
-        horario = "Por La Mañana";
-    } else if (horarioTratamiento === "2"){
-        horario = "Por Tarde";
-    } else {
-        horario = "No Seleccionado";
+// Declaro el Objeto Profesional
+class Profesional{
+    constructor(profesional){
+        this.id     = parseInt(profesional.id);
+        this.nombre = profesional.nombre;
+        this.apellido = profesional.apellido;
+        this.dni = profesional.dni;
+        this.celular = profesional.celular;
+        this.email = profesional.email;
     }
-
-    return horario;
 }
 
-//Obtengo el nombre y el precio del tratamiento seleccionado
-function obtenerTratamiento(tratamiento) {
-    if (tratamiento === "1") {
-        var tratamiento = new Tratamiento ("Odontología General", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamUna limpieza es", 1000, listaProfesionales);
-    } else if (tratamiento === "2") {
-        var tratamiento = new Tratamiento ("Limpieza Dental", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam", 8000, listaProfesionales);
-    } else {
-        var tratamiento = new Tratamiento ("Tratamiento de Conducto", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam", 3000, listaProfesionales);
-    };
-
-    objTratamiento = tratamiento;
-    return objTratamiento;
-}
-
-//Calculo el valor a pagar + IVA
-function calcularTotal (objTratamiento, iva) {
-    ivaTotal = objTratamiento.precio * iva;
-    precioTotal = objTratamiento.precio + ivaTotal;
-
-    return precioTotal;
-}
-
-function agregarProfesional(nuevoProfesional, listaProfesionales) {
-    if (nuevoProfesional != "") {
-        listaProfesionales = listaProfesionales.push(nuevoProfesional);
+// Declaro el Objeto Reserva
+class Reserva{
+    constructor(nombreCliente, apellidoCliente, dniCliente, celularCliente, emailCliente, profesionalSeleccionado, horarioSeleccionado, fechaSeleccionada){
+        this.nombre = nombreCliente;
+        this.apellido = apellidoCliente;
+        this.dni = dniCliente;
+        this.celular = celularCliente;
+        this.email = emailCliente;
+        this.profesional = profesionalSeleccionado;
+        this.horario = horarioSeleccionado;
+        this.fecha = fechaSeleccionada;
     }
-    return listaProfesionales;
+}
+var reserva = new Reserva ("Ximena", "Paparella", "3333333333", "1541231321", "ximena@hotmail.com", "09:30", "Juan Molina", "2020-12-21");
+
+// Obtengo el Select que quiero rellenar
+let selectProfesional = document.getElementById("profesional");
+
+//Recorro los profesionales para mostrarlos en el select
+for(let profesional of PROFESIONALES){
+    crearOptionValue(profesional);
+}
+// Inserto cada registro como Option.
+function crearOptionValue(profesional) {
+    let nuevoItem = document.createElement("option");
+    nuevoItem.innerHTML  = profesional.nombre + " " + profesional.apellido;
+    selectProfesional.appendChild(nuevoItem);
 }
 
-// INVOCACIONES //
-horarioReserva(horarioTratamiento);
-obtenerTratamiento(tratamiento);
-calcularTotal(objTratamiento, iva);
-agregarProfesional(nuevoProfesional, listaProfesionales);
+// Escucho el evento del botón Submit Solicitar turno para guardar los datos de la reserva.
+var subButton = document.getElementById('solicitar-turno');
+subButton.addEventListener('click', guardarDatosReserva, false); 
 
-// Muestro la reserva al cliente.
-console.log("LOS DATOS DE SU RESERVA:")
-console.log("Nombre: " + cliente.nombre);
-console.log("Celular: " + cliente.celular);
-console.log("Dni: " + cliente.dni);
-console.log("Email: " + cliente.email);
-console.log("Horario: " + horario);
-console.log("Tratamiento Seleccionado: " + objTratamiento.nombre);
-console.log("Profesionales Disponibles: " + objTratamiento.profesionales);
-console.log("Valor: " + precioTotal);
+// Obtengo todos los datos de los inputs y los guardo para guardar la reserva en local storage.
+function guardarDatosReserva() {
+    let profesional = document.getElementById("profesional").value;
+    let fecha = document.getElementById("fecha").value;
+    let horario = document.getElementById("hora").value;
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let dni = document.getElementById("dni").value;
+    let celular = document.getElementById("celular").value;
+    let email = document.getElementById("email").value;
+    
+    var reserva = new Reserva (nombre, apellido, dni, celular, email, profesional, horario, fecha);
+    var localStorageReserva = JSON.stringify(reserva);
+
+    guardarLocalStorage("Reserva de Turno", localStorageReserva);
+
+    return reserva;
+}
+
+// Muestro las reservas desde local storage
+function mostrarReserva(reserva) {
+
+}
 
 //////////////////// HELPERS ////////////////////
+
+//Funcion para cerrar modales
+function cerrarModal(){
+    var modal = document.getElementById("mod-modal");
+    modal.classList.add("--hidden")
+};
+
+//Funcion para mostrar modal.
+function mostrarModal(){
+    var modal = document.getElementById("mod-modal");
+    modal.classList.remove("--hidden")
+};
 
 // Funcion para guardar Datos en Local Storage
 function guardarLocalStorage(clave, valor) {
@@ -127,8 +140,3 @@ function obtenerLocalStorage(clave) {
 function obtenerSesionStorage(clave) {
     return sessionStorage.getItem(clave);
 }
-
-// Generar tratamientos y profesionales como Json.
-// Refactor de funciones a clases, mejor uso de metodos.
-// Guardar Reserva en el storage para un historico del cliente.
-// Mostrar reserva con los datos del Storage.

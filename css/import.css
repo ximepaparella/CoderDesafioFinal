@@ -1,67 +1,3 @@
-[class~="--sixxs"] {
-  font-size: 0.6875rem;
-  line-height: 1rem;
-}
-
-[class~="--fivexxs"] {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-[class~="--fourxs"] {
-  font-size: 0.875rem;
-  line-height: 1rem;
-}
-
-[class~="--threexs"] {
-  font-size: 0.9375rem;
-  line-height: 1.0625rem;
-}
-
-[class~="--twoxs"] {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-[class~="--xs"] {
-  font-size: 1.125rem;
-  line-height: 1.625rem;
-}
-
-[class~="--s"] {
-  font-size: 1.1875rem;
-  line-height: 1.875rem;
-}
-
-[class~="--m"] {
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-
-[class~="--l"] {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-[class~="--xl"] {
-  font-size: 2rem;
-  line-height: 2.5rem;
-}
-
-[class~="--twoxl"] {
-  font-size: 2.5rem;
-  line-height: 3.25rem;
-}
-
-[class~="--threexl"] {
-  font-size: 3rem;
-  line-height: 3.5rem;
-}
-
-strong {
-  font-weight: 700;
-}
-
 html,
 body,
 div,
@@ -1271,7 +1207,6 @@ a:hover {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     background-color: #f1f1f1;
-    height: 100vh;
     padding: 0.5rem;
   }
   .sidebar__aside {
@@ -1280,7 +1215,6 @@ a:hover {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     padding: 1rem;
-    height: 100vh;
     -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
@@ -1498,5 +1432,77 @@ textarea {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-top: 1rem;
+}
+
+[class~="--sixxs"] {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}
+
+[class~="--fivexxs"] {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+[class~="--fourxs"] {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+[class~="--threexs"] {
+  font-size: 0.9375rem;
+  line-height: 1.0625rem;
+}
+
+[class~="--twoxs"] {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+[class~="--xs"] {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+[class~="--s"] {
+  font-size: 1.1875rem;
+  line-height: 1.875rem;
+}
+
+[class~="--m"] {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+[class~="--l"] {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+[class~="--xl"] {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+[class~="--twoxl"] {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+}
+
+[class~="--threexl"] {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.--hidden {
+  display: none;
+}
+
+.--show {
+  display: none;
 }
 /*# sourceMappingURL=import.css.map */

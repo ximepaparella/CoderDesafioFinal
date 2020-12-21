@@ -1,6 +1,6 @@
 @import '../css/abstracts/mixins';
 @import '../css/abstracts/variables';
-@import '../css/abstracts/helpers';
+
 
 @import '../css/base/reset';
 @import '../css/base/types';
@@ -24,3 +24,7 @@
 @import '../css/modules/mod-card';
 @import '../css/modules/mod-modal';
 @import '../css/modules/mod-form';
+
+
+
+@import '../css/abstracts/helpers';
