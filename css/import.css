@@ -231,6 +231,7 @@ main {
 
 a {
   text-decoration: none;
+  cursor: pointer;
   color: inherit;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -1269,7 +1270,7 @@ a:hover {
   .sidebar__main {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    background-color: #dee5f1;
+    background-color: #f1f1f1;
     height: 100vh;
     padding: 0.5rem;
   }
@@ -1311,23 +1312,70 @@ a:hover {
 }
 
 .com-badge.--primary {
-  background-color: #4198f7;
+  background-color: #631719;
   color: #FFFFFF;
 }
 
 .com-badge.--secondary {
-  background-color: #49c496;
+  background-color: #9d251f;
   color: #FFFFFF;
 }
 
 .mod-nav .com-icon {
-  color: #88949e;
+  color: #333;
   font-size: 0.9375rem;
   margin-right: 0.9375rem;
 }
 
+.com-title {
+  margin-bottom: 0.5rem;
+}
+
+.com-button {
+  background-color: #631719;
+  color: #FFFFFF;
+  border-radius: 0.3125rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.com-button:hover {
+  background-color: #9d251f;
+}
+
+.com-button.--transparent {
+  background-color: transparent;
+  color: #1c1b19;
+  padding: 0.5rem 0.5rem;
+}
+
+.com-button.--transparent:hover {
+  opacity: 0.9;
+}
+
+input {
+  background-color: #FFFFFF;
+  border: 0.0625rem solid #e6e5e5;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+select {
+  background-color: #FFFFFF;
+  border: 0.0625rem solid #e6e5e5;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+textarea {
+  background-color: #FFFFFF;
+  border: 0.0625rem solid #e6e5e5;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
 .mod-header {
-  border-bottom: 1px solid #c6cdd8;
+  border-bottom: 1px solid #666;
   padding: 1rem 0;
 }
 
@@ -1371,9 +1419,74 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: 0.5rem 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.mod-card main {
+  margin-bottom: 1rem;
+}
+
+.mod-card footer {
+  margin-bottom: 0.5rem;
+}
+
+.mod-modal {
+  position: fixed;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mod-modal .com-modal {
+  background-color: #FFFFFF;
+  width: 60%;
+  height: 18.75rem;
+  border-radius: 0.625rem;
+  padding: 1.5rem;
+}
+
+.mod-modal .com-modal header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #e6e5e5;
+  margin-bottom: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mod-modal .com-modal main {
+  margin-bottom: 1.5rem;
+}
+
+.mod-form fieldset {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
 }
 /*# sourceMappingURL=import.css.map */

@@ -7,7 +7,15 @@
     header {
         display: flex;
         flex-direction: row;
-        padding:px(8) 0;
         align-items: center;
+        margin-bottom: $spacing-xs;
+    }
+
+    main {
+        margin-bottom: $spacing-sm;
+    }
+
+    footer {
+        margin-bottom: $spacing-xs;
     }
 }

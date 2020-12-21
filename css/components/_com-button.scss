@@ -1,0 +1,23 @@
+.com-button {
+    background-color: $primary-100;
+    color: $white;
+    border-radius: px(5);
+    padding: $spacing-xs $spacing-md;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $secondary;
+    }
+
+    &.--transparent {
+        background-color: transparent;
+        color:$dark-900;
+        padding: $spacing-xs $spacing-xs;
+    
+        &:hover {
+            opacity:0.9;
+        }
+    }
+
+
+}

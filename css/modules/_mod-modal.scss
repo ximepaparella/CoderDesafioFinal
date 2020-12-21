@@ -1,0 +1,32 @@
+.mod-modal {
+    position: fixed;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100vh;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .com-modal {
+        background-color: $white;
+        width: 60%;
+        height:px(300);
+        border-radius:px(10);
+        padding:$spacing-md;
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 1px solid $dark-200;
+            margin-bottom:$spacing-md;
+            align-items: center;
+        }
+        main {
+            margin-bottom:$spacing-md;
+        }
+    }
+}

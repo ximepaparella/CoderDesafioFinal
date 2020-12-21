@@ -1,0 +1,20 @@
+input {
+    background-color:$white;
+    border: px(1) solid $dark-200;
+    border-radius: px(4);
+    padding: $spacing-xs;
+}
+
+select {
+    background-color:$white;
+    border: px(1) solid $dark-200;
+    border-radius: px(4);
+    padding: $spacing-xs;
+}
+
+textarea {
+    background-color:$white;
+    border: px(1) solid $dark-200;
+    border-radius: px(4);
+    padding: $spacing-xs;
+}

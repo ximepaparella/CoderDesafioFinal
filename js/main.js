@@ -89,6 +89,7 @@ function agregarProfesional(nuevoProfesional, listaProfesionales) {
     return listaProfesionales;
 }
 
+// INVOCACIONES //
 horarioReserva(horarioTratamiento);
 obtenerTratamiento(tratamiento);
 calcularTotal(objTratamiento, iva);
@@ -105,4 +106,29 @@ console.log("Tratamiento Seleccionado: " + objTratamiento.nombre);
 console.log("Profesionales Disponibles: " + objTratamiento.profesionales);
 console.log("Valor: " + precioTotal);
 
+//////////////////// HELPERS ////////////////////
 
+// Funcion para guardar Datos en Local Storage
+function guardarLocalStorage(clave, valor) {
+    localStorage.setItem(clave, valor);
+}
+
+// Funcion para guardar Datos en Sesion Storage
+function guardarSessionStorage(clave, valor) {
+    sessionStorage.setItem(clave, valor);
+}
+
+// Funcion para obtener Datos en Local Storage
+function obtenerLocalStorage(clave) {
+    return localStorage.getItem(clave);
+}
+
+// Funcion para obtener Datos en Sesion Storage
+function obtenerSesionStorage(clave) {
+    return sessionStorage.getItem(clave);
+}
+
+// Generar tratamientos y profesionales como Json.
+// Refactor de funciones a clases, mejor uso de metodos.
+// Guardar Reserva en el storage para un historico del cliente.
+// Mostrar reserva con los datos del Storage.
