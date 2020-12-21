@@ -104,7 +104,7 @@ function guardarDatosReserva() {
 
 // Muestro las reservas desde local storage
 function mostrarReserva(reserva) {
-
+    //pendiente
 }
 
 //////////////////// HELPERS ////////////////////
