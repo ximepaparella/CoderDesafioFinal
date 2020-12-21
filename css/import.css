@@ -1311,6 +1311,7 @@ textarea {
 .mod-header {
   border-bottom: 1px solid #666;
   padding: 1rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .mod-header .row {

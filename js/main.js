@@ -19,7 +19,7 @@ for(let item of TRATAMIENTOS){
 
 function crearElemento(item) {
     let nuevoItem = document.createElement("div");
-    nuevoItem.innerHTML  = "<div class='mod-card'> <header> <h2 class='com-title --xs'>" + item.nombre + "</h2> <label class='com-badge --secondary'>Especialista</label> </header><main><h4 class='com-title --twoxs'>Precio $" +  item.valor  +  "</h4><p class='com-description --fourxs'>" + item.descripcion + "</p></main><footer><button class='com-button' id='solicitar'>Solicitar Turno</button></footer>" ;
+    nuevoItem.innerHTML  = "<div class='mod-card'> <header> <h2 class='com-title --xs'>" + item.nombre + "</h2> </header><main><h4 class='com-title --twoxs'>Precio $" +  item.valor  +  "</h4><p class='com-description --fourxs'>" + item.descripcion + "</p></main><footer><button class='com-button solicitar' id='solicitar'>Solicitar Turno</button></footer>" ;
     contenedorTratamientos.appendChild(nuevoItem);
 }
 
@@ -63,7 +63,6 @@ class Reserva{
         this.fecha = fechaSeleccionada;
     }
 }
-var reserva = new Reserva ("Ximena", "Paparella", "3333333333", "1541231321", "ximena@hotmail.com", "09:30", "Juan Molina", "2020-12-21");
 
 // Obtengo el Select que quiero rellenar
 let selectProfesional = document.getElementById("profesional");

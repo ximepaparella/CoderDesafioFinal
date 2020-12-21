@@ -127,8 +127,3 @@ function obtenerLocalStorage(clave) {
 function obtenerSesionStorage(clave) {
     return sessionStorage.getItem(clave);
 }
-
-// Generar tratamientos y profesionales como Json.
-// Refactor de funciones a clases, mejor uso de metodos.
-// Guardar Reserva en el storage para un historico del cliente.
-// Mostrar reserva con los datos del Storage.
