@@ -1458,7 +1458,6 @@ textarea {
 .mod-modal .com-modal {
   background-color: #FFFFFF;
   width: 60%;
-  height: 18.75rem;
   border-radius: 0.625rem;
   padding: 1.5rem;
 }
@@ -1488,5 +1487,16 @@ textarea {
 .mod-form fieldset {
   margin-bottom: 1rem;
   margin-right: 1rem;
+}
+
+.mod-form .form__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=import.css.map */

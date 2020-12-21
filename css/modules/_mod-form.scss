@@ -3,4 +3,10 @@
         margin-bottom: $spacing-sm;
         margin-right: $spacing-sm;
     }
+
+    .form__actions {
+        display: flex;
+        flex-direction: row;
+        margin-top:$spacing-sm;
+    }
 }
