@@ -19,9 +19,21 @@ for(let item of TRATAMIENTOS){
 
 function crearElemento(item) {
     let nuevoItem = document.createElement("div");
-    nuevoItem.innerHTML  = "<div class='mod-card'> <header> <h2 class='com-title --xs'>" + item.nombre + "</h2> </header><main><h4 class='com-title --twoxs'>Precio $" +  item.valor  +  "</h4><p class='com-description --fourxs'>" + item.descripcion + "</p></main><footer><button class='com-button solicitar' id='solicitar'>Solicitar Turno</button></footer>" ;
+    nuevoItem.innerHTML  = `
+    <div class='mod-card'>
+        <header>
+        <h2 class='com-title --xs'>${item.nombre}</h2> 
+        </header>
+        <main>
+            <h4 class='com-title --twoxs'>Precio ${item.valor}</h4>
+            <p class='com-description --fourxs'> ${item.descripcion}</p>
+        </main>
+        <footer>
+            <button class='com-button solicitar' id='solicitar'>Solicitar Turno</button>
+        </footer>
+    </div>`;
     contenedorTratamientos.appendChild(nuevoItem);
-}
+} 
 
 //Creo función para llamar a abrir modal cuando hagan click en el botón.
 document.getElementById("solicitar").addEventListener("click", mostrarModal);
