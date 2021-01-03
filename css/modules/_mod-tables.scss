@@ -1,0 +1,17 @@
+.mod-tables {
+    background-color: $white;
+    width: 100%;
+
+    th {
+        padding: $spacing-xs;
+    }
+
+    tr {
+        border-bottom: 1px solid #ccc;
+
+        &:first-of-type {
+            border-top: 1px solid #ccc;
+        }
+    }
+
+}

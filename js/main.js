@@ -65,6 +65,7 @@ class Profesional{
 // Declaro el Objeto Reserva
 class Reserva{
     constructor(nombreCliente, apellidoCliente, dniCliente, celularCliente, emailCliente, profesionalSeleccionado, horarioSeleccionado, fechaSeleccionada){
+        this.id = RESERVAS.length;
         this.nombre = nombreCliente;
         this.apellido = apellidoCliente;
         this.dni = dniCliente;
@@ -94,7 +95,7 @@ function crearOptionValue(profesional) {
 var subButton = document.getElementById('solicitar-turno');
 subButton.addEventListener('click', guardarDatosReserva, false); 
 
-// Obtengo todos los datos de los inputs y los guardo para guardar la reserva en local storage.
+//Obtengo todos los datos de los inputs y los guardo para guardar la reserva en local storage.
 function guardarDatosReserva() {
     let profesional = document.getElementById("profesional").value;
     let fecha = document.getElementById("fecha").value;
@@ -106,11 +107,27 @@ function guardarDatosReserva() {
     let email = document.getElementById("email").value;
     
     var reserva = new Reserva (nombre, apellido, dni, celular, email, profesional, horario, fecha);
+    
     var localStorageReserva = JSON.stringify(reserva);
-
     guardarLocalStorage("Reserva de Turno", localStorageReserva);
 
     return reserva;
+}
+
+function guardarReserva() {
+    let nuevoRegistro = {
+        nombre : document.getElementById("nombre").value,
+        apellido : document.getElementById("apellido").value,
+        dni : document.getElementById("dni").value,
+        celular : document.getElementById("celular").value,
+        email : document.getElementById("email").value,
+        profesional : document.getElementById("profesional").value,
+        horario : document.getElementById("hora").value,
+        fecha : document.getElementById("fecha").value,
+      }
+
+      RESERVAS.push(new Reserva(nuevoRegistro));
+      console.log(RESERVAS);
 }
 
 // Muestro las reservas desde local storage
@@ -118,36 +135,29 @@ function mostrarReserva(reserva) {
     //pendiente
 }
 
-//////////////////// HELPERS ////////////////////
+//Cambiar texto de la pagina principal
 
-//Funcion para cerrar modales
-function cerrarModal(){
-    var modal = document.getElementById("mod-modal");
-    modal.classList.add("--hidden")
-};
+// mostrar y ocultar contenedor con listado de reservas
+$("#mostrar-reservas").click(function(){
+    let listaTratamientos = $(".mod-card-list");
+    let mostrarReservas = $(".mod-reservations");
+    let buttonMostrar = $("#mostrar-reservas");
 
-//Funcion para mostrar modal.
-function mostrarModal(){
-    var modal = document.getElementById("mod-modal");
-    modal.classList.remove("--hidden")
-};
+    if(mostrarReservas.hasClass("--hidden")){
+        mostrarReservas.removeClass("--hidden")
+        listaTratamientos.addClass("--hidden");
+        
+        //Cambio el texto del botón.
+        buttonMostrar.text("Volver")
+    }else {
+        mostrarReservas.addClass("--hidden")
+        listaTratamientos.removeClass("--hidden");
 
-// Funcion para guardar Datos en Local Storage
-function guardarLocalStorage(clave, valor) {
-    localStorage.setItem(clave, valor);
-}
+        //Regreso el texto a su estado inicial
+        buttonMostrar.text("Ver mis Reservas")
+    } 
+});
 
-// Funcion para guardar Datos en Sesion Storage
-function guardarSessionStorage(clave, valor) {
-    sessionStorage.setItem(clave, valor);
-}
-
-// Funcion para obtener Datos en Local Storage
-function obtenerLocalStorage(clave) {
-    return localStorage.getItem(clave);
-}
-
-// Funcion para obtener Datos en Sesion Storage
-function obtenerSesionStorage(clave) {
-    return sessionStorage.getItem(clave);
-}
+//Modificar borde de inputs on focus
+let inputs = $(input);
+$("input")

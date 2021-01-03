@@ -1435,6 +1435,23 @@ textarea {
   margin-top: 1rem;
 }
 
+.mod-tables {
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+.mod-tables th {
+  padding: 0.5rem;
+}
+
+.mod-tables tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.mod-tables tr:first-of-type {
+  border-top: 1px solid #ccc;
+}
+
 [class~="--sixxs"] {
   font-size: 0.6875rem;
   line-height: 1rem;
@@ -1495,7 +1512,8 @@ textarea {
   line-height: 3.5rem;
 }
 
-strong {
+strong,
+.--bold {
   font-weight: 700;
 }
 

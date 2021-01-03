@@ -51,7 +51,7 @@
                     <div class="mod-settings">
                         <div class="mod-search">
                             <fieldset>
-                                <button class="com-button" type="button" onclick="mostrarReserva()" >Ver mis Reservas</button>
+                                <button class="com-button" type="button" id="mostrar-reservas" >Ver mis Reservas</button>
                             </fieldset>
                         </div>
                     </div>
@@ -125,6 +125,34 @@
                         </main>
                     </div>
                 </div>
+
+                <section class="mod-reservations --hidden">
+                    <table class="mod-tables">
+                        <tr>
+                          <th class="--bold">Fecha y Hora</th>
+                          <th class="--bold">Tratamiento</th>
+                          <th class="--bold">Nombre Cliente</th>
+                          <th class="--bold">Acciones</th>
+                        </tr>
+                        <tr>
+                          <th>10/12/2020</th>
+                          <th>Limpieza de cutis profunda</th>
+                          <th>Daniela Gallardo</th>
+                          <th>
+                              <a href="" id="remove"><i class="fas fa-trash"></i></a>
+                          </th>
+                        </tr>
+                        <tr>
+                            <th>10/12/2020</th>
+                            <th>Limpieza de cutis profunda</th>
+                            <th>Daniela Gallardo</th>
+                            <th>
+                                <a href="" id="remove"><i class="fas fa-trash"></i></a>
+                            </th>
+                        </tr>
+                      </table>
+                </section>
+
             </main>
             <footer clasS="mod-footer"></footer>
         </section>
@@ -132,9 +160,14 @@
 
 
     <!-- Scripts -->
+
     <script src="js/tratamientos.js"></script>
+    <script src="js/reservas.js"></script>
     <script src="js/profesionales.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
