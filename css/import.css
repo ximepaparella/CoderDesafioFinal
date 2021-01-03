@@ -1294,6 +1294,10 @@ input {
   padding: 0.5rem;
 }
 
+input .--focus {
+  border-color: #631719;
+}
+
 select {
   background-color: #FFFFFF;
   border: 0.0625rem solid #e6e5e5;
@@ -1301,11 +1305,19 @@ select {
   padding: 0.5rem;
 }
 
+select.--focus {
+  border-color: #631719;
+}
+
 textarea {
   background-color: #FFFFFF;
   border: 0.0625rem solid #e6e5e5;
   border-radius: 0.25rem;
   padding: 0.5rem;
+}
+
+textarea.--focus {
+  border-color: #631719;
 }
 
 .mod-header {

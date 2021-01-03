@@ -159,5 +159,11 @@ $("#mostrar-reservas").click(function(){
 });
 
 //Modificar borde de inputs on focus
-let inputs = $(input);
-$("input")
+let inputs = $("input");
+inputs.hover( function (){
+    $(this).addClass("--focus ")
+},
+function() {
+    $(this).removeClass("--focus ")
+});
+

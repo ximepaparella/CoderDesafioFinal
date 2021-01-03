@@ -3,6 +3,10 @@ input {
     border: px(1) solid $dark-200;
     border-radius: px(4);
     padding: $spacing-xs;
+
+    .--focus {
+        border-color:$primary-100;
+    }
 }
 
 select {
@@ -10,6 +14,10 @@ select {
     border: px(1) solid $dark-200;
     border-radius: px(4);
     padding: $spacing-xs;
+
+    &.--focus {
+        border-color:$primary-100;
+    }
 }
 
 textarea {
@@ -17,4 +25,8 @@ textarea {
     border: px(1) solid $dark-200;
     border-radius: px(4);
     padding: $spacing-xs;
+
+    &.--focus {
+        border-color:$primary-100;
+    }
 }
